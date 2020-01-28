@@ -16,9 +16,23 @@ namespace BasicCalculator
             Console.WriteLine("Enter Relative Humidity: ");
             int relativeHumidity = int.Parse(Console.ReadLine());
 
-            int sum = temperature - 9 * (100 - relativeHumidity) / 25 ;
+            decimal sum = temperature - 9 * (100 - relativeHumidity) / 25 ;
 
-            Console.WriteLine("The answer is " + sum);
+            Console.WriteLine("The dew point is " + sum);
+
+            Console.WriteLine("Enter the Windspeed: ");
+
+            int windSpeed = int.Parse(Console.ReadLine());
+
+            //Calculate windchill
+            
+
+            double windChill = 35.74 + (0.6125 * temperature)
+                - (35.75 * Math.Pow(windSpeed, 0.16)) + (0.4275 * temperature * Math.Pow(windSpeed, 0.16));
+
+            Console.WriteLine("The Windchill will be: " + windChill);
+
+
         }
     }
 }
